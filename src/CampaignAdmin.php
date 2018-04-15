@@ -18,7 +18,7 @@ use SilverStripe\Forms\HiddenField;
 use SilverStripe\Forms\RequiredFields;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\ORM\FieldType\DBDatetime;
-use SilverStripe\ORM\SS_List;
+use SilverStripe\ORM\ListInterface;
 use SilverStripe\ORM\UnexpectedDataException;
 use SilverStripe\ORM\ValidationResult;
 use SilverStripe\Security\PermissionProvider;
@@ -396,7 +396,7 @@ class CampaignAdmin extends LeftAndMain implements PermissionProvider
     /**
      * Gets viewable list of campaigns
      *
-     * @return SS_List
+     * @return ListInterface
      */
     protected function getListItems()
     {
