@@ -16,7 +16,7 @@ use SilverStripe\Forms\LiteralField;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\Form;
 use SilverStripe\Forms\TextField;
-use SilverStripe\ORM\ArrayListInterface;
+use SilverStripe\ORM\ArrayList;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\ORM\FieldType\DBHTMLText;
 use SilverStripe\ORM\ValidationException;
@@ -111,7 +111,7 @@ class AddToCampaignHandler
     /**
      * Get what ChangeSets are available for an item to be added to by this user
      *
-     * @return ArrayListInterface|ChangeSet[]
+     * @return ArrayList|ChangeSet[]
      */
     protected function getAvailableChangeSets()
     {
@@ -127,7 +127,7 @@ class AddToCampaignHandler
      * Get changesets that a given object is already in
      *
      * @param DataObject
-     * @return ArrayListInterface[ChangeSet]
+     * @return ArrayList[ChangeSet]
      */
     protected function getInChangeSets($object)
     {
@@ -138,7 +138,7 @@ class AddToCampaignHandler
                 'State' => ChangeSet::STATE_OPEN
             ]);
         } else {
-            $changeSets = new ArrayListInterface();
+            $changeSets = new ArrayList();
         }
 
         return $changeSets;
@@ -338,8 +338,8 @@ class AddToCampaignHandler
     /**
      * Get descriptive alert to display at the top of the form
      *
-     * @param ArrayListInterface $inChangeSets List of changesets this item exists in
-     * @param ArrayListInterface $candidateChangeSets List of changesets this item could be added to
+     * @param ArrayList $inChangeSets List of changesets this item exists in
+     * @param ArrayList $candidateChangeSets List of changesets this item could be added to
      * @param bool $canCreate
      * @return string
      */
